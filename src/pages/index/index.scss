@@ -1,0 +1,66 @@
+page{
+  .index{
+    margin: 30rpx;
+    background-color: #fff;
+    padding: 30rpx 0;
+    .meeting_manager{
+      text-align: center;
+      font-size: 50rpx;
+      margin: 0 0 80rpx 0;
+      border-bottom: 2rpx solid rgb(245, 245, 245);
+      padding: 0 0 40rpx 0;
+    }
+    .title{
+      text-align: center;
+      margin-bottom: 30rpx;
+    }
+    .choose_identity{
+      display: flex;
+      height: 200rpx;
+      padding: 0 30rpx;
+      .admin{
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        image{
+          width: 50%;
+          height: 50%;
+        }
+      }
+      .audience{
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        image{
+          width: 50%;
+          height: 50%;
+        }
+      }
+    }
+    .login_view{
+      position: fixed;
+      width: 100%;
+      bottom: 150rpx;
+      left: 0;
+      .login_nav{
+        margin: 30rpx;
+        padding: 30rpx 0;
+        background-color: #fff;
+        .login_text{
+          text-align: center;
+          margin: 50rpx;
+          .identity{
+            color: #1296DB;
+          }
+        }
+        .login_btn{
+          margin: 30rpx;
+        }
+      }
+    }
+  }
+}

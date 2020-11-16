@@ -1,0 +1,63 @@
+page{
+  background-color: rgb(245, 245, 245);
+  .home_page{
+    margin: 30rpx;
+    .user_info{
+      display: flex;
+      background-color: #fff;
+      padding: 20rpx;
+      .user_msg{
+        flex: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 50rpx;
+        .user_name,.user_gender{
+          flex: 1;
+          display: flex;
+          align-items: center;
+        }
+      }
+      .icon{
+        flex: 0.5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+    .swiper_nav{
+      background-color: #fff;
+      margin-top: 30rpx;
+      padding: 0 10rpx;
+      .swiper_view{
+        .audience_nav{
+          height: 100%;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          // align-items: center;
+        }
+        .audience_card{
+          padding: 30rpx;
+          border: 0.5px solid rgb(245, 245, 245);
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          .audience_img{
+            display: flex;
+            justify-content: center;
+          }
+          .audience_nickName{
+            text-align: center;
+            white-space: nowrap;
+            overflow: hidden;
+          }
+        }
+      }
+    }
+    
+  }
+  
+}
