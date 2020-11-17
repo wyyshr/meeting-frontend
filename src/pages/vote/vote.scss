@@ -1,0 +1,81 @@
+page{
+  background-color: rgb(245, 245, 245);
+  .vote_page{
+    margin: 20rpx;
+    background-color: #fff;
+    padding: 20rpx 0;
+    .at-modal__content{
+      min-height: auto;
+    }
+    .curtain_nav{
+      background-color: #fff;
+      padding: 50rpx;
+      .item{
+        display: flex;
+        margin: 20rpx 0;
+        .option{
+          flex: 1;
+        }
+        .num{
+          flex: 1;
+          view{
+            background-color: #e75e5e;
+            color: #fff;
+            text-align: center;
+          }
+        }
+      }
+    }
+    .add_nav{
+      background-color: #fff;
+      padding: 50rpx;
+      .footer_btn{
+        display: flex;
+        margin-top: 50rpx;
+        justify-content: flex-end;
+        .at-button{
+          width: 30%;
+          text-align: right;
+          margin: 0;
+          margin-left: 20rpx;
+        }
+      }
+    }
+    .vote_content{
+      .vote_item{
+        margin-bottom: 100rpx;
+        border-bottom: 1px solid #eae9e9;
+        .top{
+          display: flex;
+          align-items: center;
+          .title_nav{
+            flex: 7;
+          }
+          .close_btn{
+            flex: 1;
+            padding: 0 20rpx;
+            .at-button--primary{
+              color: #FFF;
+              border: 1PX solid #e86161;
+              background: #e86161;
+            }
+          }
+        }
+        .options_nav{
+          .at-icon-check{
+            color: #ee2c2c;
+          }
+        }
+      }
+    }
+    .submit_btn{
+      padding: 20rpx;
+    }
+    .add_btn{
+      position: fixed;
+      z-index: 999;
+      bottom: 100rpx;
+      right: 30rpx;
+    }
+  }
+}

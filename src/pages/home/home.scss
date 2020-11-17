@@ -2,6 +2,9 @@ page{
   background-color: rgb(245, 245, 245);
   .home_page{
     margin: 30rpx;
+    .at-modal__content{
+      min-height: auto;
+    }
     .user_info{
       display: flex;
       background-color: #fff;
@@ -57,7 +60,5 @@ page{
         }
       }
     }
-    
   }
-  
 }

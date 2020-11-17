@@ -82,9 +82,7 @@ class Elect extends React.Component<ElectProps, ElectState> {
   // 选择选项
   handleOptionClick = (e) => this.setState({selectValue: e})
   // 结束选举按钮
-  cancleClick = id => {
-    this.setState({isModalOpen: true, endId: id})
-  }
+  cancleClick = id => this.setState({isModalOpen: true, endId: id})
   // 结束选举
   endElect = async () => {
     const { endId } = this.state
@@ -180,6 +178,7 @@ class Elect extends React.Component<ElectProps, ElectState> {
             }
           </View>
         </AtCurtain>
+        {/* 添加选举 */}
         <AtCurtain
           isOpened={isAddElectCurtailShow}
           onClose={()=>this.setState({isAddElectCurtailShow: false})}
