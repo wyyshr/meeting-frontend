@@ -142,7 +142,12 @@ class Home extends React.Component<HomeProps, HomeState> {
           </View>
           {/* 选择框 */}
           <View className="choose_nav">
-            <AtActionSheet isOpened={isSelectShow} cancelText='取消'>
+            <AtActionSheet 
+              isOpened={isSelectShow} 
+              cancelText='取消' 
+              onCancel={()=>this.setState({isSelectShow: false})} 
+              onClose={()=>this.setState({isSelectShow: false})}
+            >
               <AtActionSheetItem onClick={this.toVotePage}>{identity == 1 ? '发起表决' : '参与表决'}</AtActionSheetItem>
               <AtActionSheetItem onClick={this.toElectPage}>{identity == 1 ? '发起选举' : '参与选举'}</AtActionSheetItem>
             </AtActionSheet>
