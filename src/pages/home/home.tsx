@@ -35,6 +35,7 @@ export interface HomeState {
   isSelectShow: boolean
   isModalOpen: boolean
   pageY: number
+  timer: any
 }
  
 class Home extends React.Component<HomeProps, HomeState> {
@@ -47,20 +48,26 @@ class Home extends React.Component<HomeProps, HomeState> {
       isSelectShow: false,
       isModalOpen: false,
       pageY: 0,
+      timer: null
     };
   }
   componentDidMount() {
     const userInfo = Taro.getStorageSync('userInfo') || '';
     if(!userInfo) return Taro.atMessage({'message': '请返回重新登录', 'type': 'error'});
-    this.setState({userInfo: userInfo as UserType});
-    this.setState({screenHeight: Taro.getSystemInfoSync().screenHeight * 2});
-    this.getInMeetingUser(userInfo)
+    this.setState({
+      userInfo: userInfo as UserType,
+      screenHeight: Taro.getSystemInfoSync().screenHeight * 2,
+      timer: setInterval(() => {this.getInMeetingUser()}, 60000)  // 每分钟获取一次观众
+    });
+    this.getInMeetingUser()
   }
   // 获取观众
-  getInMeetingUser = async (userInfo) => {
+  getInMeetingUser = async () => {
+    const userInfo = Taro.getStorageSync('userInfo') || '';
+    const user = userInfo as { nickName: string }
     const res = await ajax({
       url: PATH.getInMeetingUser,
-      data: { nickName: userInfo.nickName }
+      data: { nickName: user.nickName }
     })
     const result = res as ResultType<AudienceType>
     result.code == 1 && this.setState({audience: result.data})
@@ -87,6 +94,10 @@ class Home extends React.Component<HomeProps, HomeState> {
     setTimeout(() => {
       Taro.redirectTo({url: '/pages/index/index'})
     }, 1500);
+  }
+  componentWillUnmount(){
+    const { timer } = this.state
+    clearInterval(timer)
   }
   render() { 
     const { userInfo, screenHeight, audience, isSelectShow, isModalOpen, pageY } = this.state
