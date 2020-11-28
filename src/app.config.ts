@@ -1,10 +1,10 @@
 export default {
   pages: [
+    'pages/scanCode/scanCode',
     'pages/index/index',
     'pages/home/home',
     'pages/vote/vote',
     'pages/elect/elect',
-    'pages/scanCode/scanCode',
   ],
   window: {
     backgroundTextStyle: 'light',

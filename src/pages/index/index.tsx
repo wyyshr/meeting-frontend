@@ -72,7 +72,7 @@ export default class Index extends Component<IndexProps, IndexState> {
     const result = res as UserType
     const user = {
       nickName: userInfo.nickName,
-      identity: result.identity,
+      identity: identity,
       gender: userInfo.gender,
       avatarUrl: userInfo.avatarUrl
     }

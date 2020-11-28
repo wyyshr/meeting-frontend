@@ -1,6 +1,8 @@
 export const PATH = {
   login: '/user/login',                             // 登录
   getInMeetingUser: '/user/getInMeetingUser',       // 获取观众
+  handsUp: '/user/handsUp',                         // 举手
+  cancleHandsUp: '/user/cancleHandsUp',             // 取消举手
   
   createElect: '/elect/new',                        // 创建选举
   getElect: '/elect/getElect',                      // 获取选举内容
